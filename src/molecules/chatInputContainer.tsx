@@ -2,11 +2,11 @@ import styled from "styled-components";
 import {Input} from "@/atoms/input";
 import {SubmitButton} from "@/atoms/submitButton";
 import React from "react";
-import {messageType} from "@/types/messageType";
 
 interface ChatInputContainerType {
     className?: string;
-    setMessageData: React.SetStateAction<messageType[]>;
+    handleEnterKeyPressed?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
+    value: string;
 }
 
 const ChatInputContainerStyle = styled.div`
@@ -14,10 +14,14 @@ const ChatInputContainerStyle = styled.div`
     border: 1px solid black;
 `;
 
-const ChatInputContainer = ({ className, setMessageData }: ChatInputContainerType) => {
+const ChatInputContainer = ({ className, handleEnterKeyPressed, value }: ChatInputContainerType) => {
+
     return (
         <ChatInputContainerStyle className={className}>
-            <Input placeholderText={"채팅 내용을 입력해 주세요."} type={"text"} />
+            <Input placeholderText={"채팅 내용을 입력해 주세요."}
+                   type={"text"}
+                   handleKeyDownEvent={handleEnterKeyPressed}
+                   value={value}/>
             <SubmitButton text={"Chat"} />
         </ChatInputContainerStyle>
     )
