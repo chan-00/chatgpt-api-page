@@ -1,8 +1,10 @@
+import {CenterContainer} from "@/atoms/centerContainer";
+import {ChatArea} from "@/organisms/chatArea";
 
 export default function Home() {
     return (
-        <div>
-            안녕하세요.
-        </div>
+        <CenterContainer>
+            <ChatArea />
+        </CenterContainer>
     )
 }

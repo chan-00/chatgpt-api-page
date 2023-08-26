@@ -11,18 +11,24 @@ interface ChatMessageBoxStyleType {
     possession: possessionType;
 }
 
-const ChatMessageBoxStyle = styled.div<ChatMessageBoxStyleType>`
+const ChatMessageBoxContainerStyle = styled.div<ChatMessageBoxStyleType>`
+    text-align: ${props => props.possession === "user" ? "right" : "left"};
+`
+
+const ChatMessageBoxStyle = styled.span<ChatMessageBoxStyleType>`
     border: 1px solid black;
     border-radius: 10px;
+    padding: 5px;
     background-color: ${props => props.possession === "user" ? "skyblue" : "white"};
-    float: ${props => props.possession === "user" ? "right" : "left"};
 `;
 
 const ChatMessageBox = ({ className, text, possession }: ChatMessageBoxType) => {
     return (
-        <ChatMessageBoxStyle className={className} possession={possession}>
-            {text}
-        </ChatMessageBoxStyle>
+        <ChatMessageBoxContainerStyle possession={possession}>
+            <ChatMessageBoxStyle className={className} possession={possession}>
+                {text}
+            </ChatMessageBoxStyle>
+        </ChatMessageBoxContainerStyle>
     )
 }
 

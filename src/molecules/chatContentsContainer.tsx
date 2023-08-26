@@ -4,19 +4,22 @@ import {ChatMessageBox} from "@/atoms/chatMessageBox";
 
 interface ChatContentsContainerType {
     className?: string;
-    message: messageType[];
+    message?: messageType[];
 }
 
 const ChatContentsContainerStyle = styled.div`
     border: 1px solid black;
+    padding: 10px;
+  
+    overflow: auto;
 `;
 
 const ChatContentsContainer = ({ className, message }: ChatContentsContainerType) => {
 
     return (
         <ChatContentsContainerStyle className={className}>
-            {message.map((messageData: messageType, index: number) => (
-                <ChatMessageBox key={index} text={messageData[0]} possession={messageData[1]} />
+            {message?.map((messageData: messageType, index: number) => (
+                    <ChatMessageBox key={index} text={messageData[0]} possession={messageData[1]} />
             ))}
         </ChatContentsContainerStyle>
     )

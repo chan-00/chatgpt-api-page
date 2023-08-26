@@ -2,8 +2,8 @@ import styled from "styled-components";
 import React from "react";
 
 const InputStyle = styled.input`
-  padding: 5px;
-  font-size: 10px;
+    padding: 5px;
+    font-size: 10px;
 `;
 
 interface InputType {
@@ -23,7 +23,7 @@ const Input = ({placeholderText, type, value, handleKeyDownEvent, handleChangeEv
                     value={value}
                     placeholder={placeholderText}
                     onKeyDown={handleKeyDownEvent}
-                    onChange={handleChangeEvent}/>
+                    onChange={handleChangeEvent} />
     );
 };
 
