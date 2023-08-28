@@ -12,7 +12,7 @@ interface ChatMessageBoxStyleType {
 }
 
 const ChatMessageBoxContainerStyle = styled.div<ChatMessageBoxStyleType>`
-    text-align: ${props => props.possession === "user" ? "right" : "left"};
+  text-align: ${props => props.possession === "user" ? "right" : "left"};
 `
 
 const ChatMessageBoxStyle = styled.span<ChatMessageBoxStyleType>`

@@ -30,7 +30,8 @@ const ChatInputContainer = ({ className, handleEnterKeyPressed, handleClickEvent
                    type={"text"}
                    handleKeyDownEvent={handleEnterKeyPressed}
                    handleChangeEvent={handleOnChangeEvent}
-                   value={value}/>
+                   value={value}
+                   maxLength={20} />
             <SubmitButton text={"Chat"}
                           handleClickEvent={handleClickEvent}/>
         </ChatInputContainerStyle>
